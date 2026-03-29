@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		005E1071E6DB407D919F75A6 /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE1C85F2E879F20D3A869D5 /* ProfileTabView.swift */; };
+		0CB52FAF878AF28AC2A1394A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A53BF777CFD3989108AAFD /* Models.swift */; };
+		1010E2DC772B2629E813FD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1335FFE71663435F82F8754 /* Assets.xcassets */; };
+		1859152FAEEED615FB7F8D0A /* RepeatersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095E499D9940F6A91FFCCBB /* RepeatersTabView.swift */; };
+		3F201C2DE5A95904FC99D234 /* SatellitesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E61D781AD506343B6402AB /* SatellitesTabView.swift */; };
+		4911B914FB1F93582DD2986F /* RepeaterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DEF29CE4520E4F92772C48 /* RepeaterStore.swift */; };
+		4922D897221B2D86AE9C0F88 /* CallsignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2EA32E12DE62B273C600C /* CallsignService.swift */; };
+		6362654204A508CB8E839EA6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BD7FA92295F87AF33357E /* LocationService.swift */; };
+		6C46B182F66B98DB06748BC3 /* AwardsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1113F9E81F68A0F8D90231D0 /* AwardsTabView.swift */; };
+		87A2EB21FDFE8C84E81873D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955E8F64C0F41340A7F720 /* ContentView.swift */; };
+		9435BAEBFC5512AEE8962393 /* QSOStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */; };
+		A5109C412484CB9F129BAE06 /* LogTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD25ADBAA63E51C3820861C /* LogTabView.swift */; };
+		C7A807B382A0045FEC24A974 /* HAMAllInOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732BE20AF63EFCB6FE27280 /* HAMAllInOneApp.swift */; };
+		CF53B1EAA1861CA5CDAC2155 /* SatelliteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02DEF29CE4520E4F92772C48 /* RepeaterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStore.swift; sourceTree = "<group>"; };
+		1095E499D9940F6A91FFCCBB /* RepeatersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatersTabView.swift; sourceTree = "<group>"; };
+		1113F9E81F68A0F8D90231D0 /* AwardsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsTabView.swift; sourceTree = "<group>"; };
+		13F442F9ABA9A3C56B195AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		22A53BF777CFD3989108AAFD /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4FD25ADBAA63E51C3820861C /* LogTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTabView.swift; sourceTree = "<group>"; };
+		6732BE20AF63EFCB6FE27280 /* HAMAllInOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAMAllInOneApp.swift; sourceTree = "<group>"; };
+		67D30F3AFD82AD7E6F31D4ED /* HAMAllInOne.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HAMAllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E61D781AD506343B6402AB /* SatellitesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatellitesTabView.swift; sourceTree = "<group>"; };
+		9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteStore.swift; sourceTree = "<group>"; };
+		B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSOStore.swift; sourceTree = "<group>"; };
+		BDE1C85F2E879F20D3A869D5 /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
+		C1335FFE71663435F82F8754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF955E8F64C0F41340A7F720 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D1B2EA32E12DE62B273C600C /* CallsignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsignService.swift; sourceTree = "<group>"; };
+		E66BD7FA92295F87AF33357E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		09AAC4633892D3A70A7A8393 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5948C56310052CDB72ABE620 /* Awards */,
+				82BD53E2ECD93719525E6FB4 /* Log */,
+				46AF17C9307890AEF2D0B77E /* Profile */,
+				D63905A20D5285C5A8849CAE /* Repeaters */,
+				5BF47FE99DB6EBD4F8B5CE3F /* Satellites */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46AF17C9307890AEF2D0B77E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BDE1C85F2E879F20D3A869D5 /* ProfileTabView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4F3C400ADC54B39B4C21796B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C1335FFE71663435F82F8754 /* Assets.xcassets */,
+				13F442F9ABA9A3C56B195AD0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5948C56310052CDB72ABE620 /* Awards */ = {
+			isa = PBXGroup;
+			children = (
+				1113F9E81F68A0F8D90231D0 /* AwardsTabView.swift */,
+			);
+			path = Awards;
+			sourceTree = "<group>";
+		};
+		5BF47FE99DB6EBD4F8B5CE3F /* Satellites */ = {
+			isa = PBXGroup;
+			children = (
+				73E61D781AD506343B6402AB /* SatellitesTabView.swift */,
+			);
+			path = Satellites;
+			sourceTree = "<group>";
+		};
+		6955FC0430BAD922CCA47EBD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DA5AF438A802B28C0B37B0CF /* App */,
+				7F5224635BB46F770670FF79 /* Models */,
+				96FA800AA4167EFE46FBD7AB /* Services */,
+				B061AFA36360A6BA330E4704 /* Utilities */,
+				09AAC4633892D3A70A7A8393 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7F5224635BB46F770670FF79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22A53BF777CFD3989108AAFD /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82BD53E2ECD93719525E6FB4 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				4FD25ADBAA63E51C3820861C /* LogTabView.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		96FA800AA4167EFE46FBD7AB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2EA32E12DE62B273C600C /* CallsignService.swift */,
+				E66BD7FA92295F87AF33357E /* LocationService.swift */,
+				B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */,
+				02DEF29CE4520E4F92772C48 /* RepeaterStore.swift */,
+				9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD4A8E36263BDE0E6A4371FA = {
+			isa = PBXGroup;
+			children = (
+				4F3C400ADC54B39B4C21796B /* Resources */,
+				6955FC0430BAD922CCA47EBD /* Sources */,
+				CD6DF77D03D5D2106408F4B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B061AFA36360A6BA330E4704 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CD6DF77D03D5D2106408F4B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67D30F3AFD82AD7E6F31D4ED /* HAMAllInOne.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D63905A20D5285C5A8849CAE /* Repeaters */ = {
+			isa = PBXGroup;
+			children = (
+				1095E499D9940F6A91FFCCBB /* RepeatersTabView.swift */,
+			);
+			path = Repeaters;
+			sourceTree = "<group>";
+		};
+		DA5AF438A802B28C0B37B0CF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CF955E8F64C0F41340A7F720 /* ContentView.swift */,
+				6732BE20AF63EFCB6FE27280 /* HAMAllInOneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BB980B1069B98E2E6264ABC /* HAMAllInOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7676B9B5FC5B168E3668CC8 /* Build configuration list for PBXNativeTarget "HAMAllInOne" */;
+			buildPhases = (
+				5D68FEB2187469DABC67CAA5 /* Sources */,
+				F26604568B7E464D077D1262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HAMAllInOne;
+			packageProductDependencies = (
+			);
+			productName = HAMAllInOne;
+			productReference = 67D30F3AFD82AD7E6F31D4ED /* HAMAllInOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F73FDC57633868B7E602D75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					1BB980B1069B98E2E6264ABC = {
+						DevelopmentTeam = TXHUY489RV;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9A5134B3C67992B2A418BC24 /* Build configuration list for PBXProject "HAMAllInOne" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AD4A8E36263BDE0E6A4371FA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BB980B1069B98E2E6264ABC /* HAMAllInOne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F26604568B7E464D077D1262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1010E2DC772B2629E813FD40 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D68FEB2187469DABC67CAA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C46B182F66B98DB06748BC3 /* AwardsTabView.swift in Sources */,
+				4922D897221B2D86AE9C0F88 /* CallsignService.swift in Sources */,
+				87A2EB21FDFE8C84E81873D8 /* ContentView.swift in Sources */,
+				C7A807B382A0045FEC24A974 /* HAMAllInOneApp.swift in Sources */,
+				6362654204A508CB8E839EA6 /* LocationService.swift in Sources */,
+				A5109C412484CB9F129BAE06 /* LogTabView.swift in Sources */,
+				0CB52FAF878AF28AC2A1394A /* Models.swift in Sources */,
+				005E1071E6DB407D919F75A6 /* ProfileTabView.swift in Sources */,
+				9435BAEBFC5512AEE8962393 /* QSOStore.swift in Sources */,
+				4911B914FB1F93582DD2986F /* RepeaterStore.swift in Sources */,
+				1859152FAEEED615FB7F8D0A /* RepeatersTabView.swift in Sources */,
+				CF53B1EAA1861CA5CDAC2155 /* SatelliteStore.swift in Sources */,
+				3F201C2DE5A95904FC99D234 /* SatellitesTabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		017514190229C465BB86BDDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = TXHUY489RV;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "HAM All-In-One needs your location for satellite pass predictions.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HAM All-In-One needs your location to show nearby repeaters and calculate distances.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E881A9C93048AC5FA8FA6CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.hamallinone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7E1037E143DBFD1D57CC5F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TXHUY489RV;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "HAM All-In-One needs your location for satellite pass predictions.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HAM All-In-One needs your location to show nearby repeaters and calculate distances.";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5D75B5551E58D90DB34BE17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.hamallinone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A5134B3C67992B2A418BC24 /* Build configuration list for PBXProject "HAMAllInOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7E1037E143DBFD1D57CC5F1 /* Debug */,
+				017514190229C465BB86BDDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D7676B9B5FC5B168E3668CC8 /* Build configuration list for PBXNativeTarget "HAMAllInOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E881A9C93048AC5FA8FA6CA /* Debug */,
+				F5D75B5551E58D90DB34BE17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F73FDC57633868B7E602D75 /* Project object */;
+}
