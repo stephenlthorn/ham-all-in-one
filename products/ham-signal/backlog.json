@@ -1,0 +1,149 @@
+{
+  "lastUpdated": "2026-03-30",
+  "product": "ham-signal",
+  "note": "Initial backlog — migrated from app development state and recent commits",
+  "phases": {
+    "A": {
+      "label": "Foundation & Feature Development",
+      "promotionThreshold": 1,
+      "items": [
+        {
+          "id": "A-001",
+          "title": "Repeater data integration — ARD sync, offline cache, map view",
+          "status": "done",
+          "completedAt": "2026-03-30",
+          "commit": "a2c1ef3",
+          "priority": 1,
+          "storeBlocker": false,
+          "postLaunch": false,
+          "note": "RepeaterStore, SatelliteStore, QSOStore from latest commit"
+        },
+        {
+          "id": "A-002",
+          "title": "Callsign lookup service — FCC + QRZ integration",
+          "status": "done",
+          "completedAt": "2026-03-30",
+          "commit": "a2c1ef3",
+          "priority": 2,
+          "storeBlocker": false,
+          "note": "CallsignService from latest commit"
+        },
+        {
+          "id": "A-003",
+          "title": "Awards tab — WAS, DXCC, IOTA tracking",
+          "status": "done",
+          "completedAt": "2026-03-30",
+          "commit": "a2c1ef3",
+          "priority": 3,
+          "storeBlocker": false,
+          "note": "AwardsTabView from latest commit"
+        },
+        {
+          "id": "A-004",
+          "title": "APRS store and integration",
+          "status": "todo",
+          "priority": 4,
+          "storeBlocker": false,
+          "note": "APRSStore.swift added in latest commit but not yet integrated into UI"
+        },
+        {
+          "id": "A-005",
+          "title": "DX Cluster store and integration",
+          "status": "todo",
+          "priority": 5,
+          "storeBlocker": false,
+          "note": "DXClusterStore.swift added but UI not wired"
+        },
+        {
+          "id": "A-006",
+          "title": "LoTW (Logbook of the World) integration",
+          "status": "todo",
+          "priority": 6,
+          "storeBlocker": false,
+          "note": "LoTWStore.swift added but integration incomplete"
+        },
+        {
+          "id": "A-007",
+          "title": "Satellite pass predictions — SGP4 integration",
+          "status": "done",
+          "completedAt": "2026-03-30",
+          "commit": "a2c1ef3",
+          "priority": 7,
+          "storeBlocker": false,
+          "note": "SGP4.swift from latest commit"
+        },
+        {
+          "id": "A-008",
+          "title": "DXCC entity database (ZDXCC) integration",
+          "status": "done",
+          "completedAt": "2026-03-30",
+          "commit": "a2c1ef3",
+          "priority": 8,
+          "storeBlocker": false,
+          "note": "ZDXCCDatabase.swift from latest commit"
+        }
+      ]
+    },
+    "B": {
+      "label": "UI/UX Polish & Accessibility",
+      "promotionThreshold": 1,
+      "items": [
+        {
+          "id": "B-001",
+          "title": "iOS HIG audit — spacing, typography, touch targets",
+          "status": "todo",
+          "priority": 1,
+          "storeBlocker": false
+        },
+        {
+          "id": "B-002",
+          "title": "Awards tab polish and empty states",
+          "status": "todo",
+          "priority": 2,
+          "storeBlocker": false
+        },
+        {
+          "id": "B-003",
+          "title": "Repeater map view polish",
+          "status": "todo",
+          "priority": 3,
+          "storeBlocker": false
+        },
+        {
+          "id": "B-004",
+          "title": "VoiceOver / Dynamic Type support",
+          "status": "todo",
+          "priority": 4,
+          "storeBlocker": false
+        }
+      ]
+    },
+    "C": {
+      "label": "App Store Readiness",
+      "promotionThreshold": null,
+      "items": [
+        {
+          "id": "C-001",
+          "title": "App Store metadata — screenshots, description, keywords",
+          "status": "todo",
+          "priority": 1,
+          "storeBlocker": true
+        },
+        {
+          "id": "C-002",
+          "title": "Privacy policy URL",
+          "status": "todo",
+          "priority": 2,
+          "storeBlocker": true
+        },
+        {
+          "id": "C-003",
+          "title": "TestFlight external tester setup",
+          "status": "todo",
+          "priority": 3,
+          "storeBlocker": false
+        }
+      ]
+    }
+  }
+}

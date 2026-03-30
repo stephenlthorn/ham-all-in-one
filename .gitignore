@@ -1,0 +1,16 @@
+# ios-dev-co symlink reference (local only, do not track)
+.ios-dev-co/
+
+# macOS
+.DS_Store
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata
+**/xcuserdata/
+
+# Build products
+build/
+DerivedData/
+*.ipa
+*.mobileprovision

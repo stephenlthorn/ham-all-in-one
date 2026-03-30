@@ -1,0 +1,45 @@
+{
+  "status": "initialized",
+  "product": "ham-signal",
+  "phase": "A",
+  "phaseLabel": "Foundation & Feature Development",
+  "phaseStartedAt": "2026-03-30",
+  "totalIterations": 0,
+  "lastIterationAt": null,
+  "lastQAStatus": "unknown",
+  "consecutiveCleanNights": 0,
+  "lastCommit": "a2c1ef3",
+  "sourceRepo": "https://github.com/stephenlthorn/ham-all-in-one",
+  "bundleId": "com.stephenthorn.HAMSignal",
+  "scheme": "HAMAllInOne",
+  "fastlaneRoot": "/Users/stephenthorn/GitHub/ham-all-in-one/fastlane",
+  "phases": {
+    "A": {
+      "label": "Foundation & Feature Development",
+      "promotionThreshold": 1,
+      "status": "active",
+      "itemsComplete": [],
+      "storeBlockersRemaining": null
+    },
+    "B": {
+      "label": "UI/UX Polish & Accessibility",
+      "promotionThreshold": 1,
+      "status": "pending",
+      "itemsComplete": [],
+      "storeBlockersRemaining": null
+    },
+    "C": {
+      "label": "App Store Readiness",
+      "promotionThreshold": null,
+      "status": "pending",
+      "itemsComplete": [],
+      "storeBlockersRemaining": null
+    }
+  },
+  "nightlySchedule": [
+    { "job": "ham-signal-sprint-1", "time": "9:30 PM ET", "iteration": 1 },
+    { "job": "ham-signal-sprint-2", "time": "10:30 PM ET", "iteration": 2 },
+    { "job": "ham-signal-sprint-3", "time": "11:30 PM ET", "iteration": 3 }
+  ],
+  "scheduleNote": "HAM Signal sprints run 9:30-11:30 PM ET, offset by 30min from ADHD Call Reminder pipeline to avoid resource contention."
+}
