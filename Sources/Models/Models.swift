@@ -342,15 +342,17 @@ extension Double {
     var radiansToDegrees: Double { self * 180 / .pi }
 }
 
-// MARK: - DXCC Entity
+// DXCCEntity is defined in DXCCDatabase.swift — do not duplicate here
+
+// MARK: - DXCC Entity (also used by ZDXCCDatabase.swift)
 
 struct DXCCEntity: Identifiable, Codable {
     let id: UUID
-    var prefix: String           // e.g. "K", "W", "VE"
+    var prefix: String
     var country: String
     var cqZone: Int?
     var ituZone: Int?
-    var continent: String?       // NA, SA, EU, AS, AF, OC
+    var continent: String?
 
     init(id: UUID = UUID(), prefix: String, country: String, cqZone: Int? = nil, ituZone: Int? = nil, continent: String? = nil) {
         self.id = id

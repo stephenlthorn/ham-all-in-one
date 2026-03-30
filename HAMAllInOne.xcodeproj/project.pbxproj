@@ -11,16 +11,21 @@
 		0CB52FAF878AF28AC2A1394A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A53BF777CFD3989108AAFD /* Models.swift */; };
 		1010E2DC772B2629E813FD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1335FFE71663435F82F8754 /* Assets.xcassets */; };
 		1859152FAEEED615FB7F8D0A /* RepeatersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095E499D9940F6A91FFCCBB /* RepeatersTabView.swift */; };
+		22F4A8D948E913371BD265C7 /* DXClusterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAC2A41D796A691A11A194 /* DXClusterStore.swift */; };
 		3F201C2DE5A95904FC99D234 /* SatellitesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E61D781AD506343B6402AB /* SatellitesTabView.swift */; };
 		4911B914FB1F93582DD2986F /* RepeaterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DEF29CE4520E4F92772C48 /* RepeaterStore.swift */; };
 		4922D897221B2D86AE9C0F88 /* CallsignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2EA32E12DE62B273C600C /* CallsignService.swift */; };
 		6362654204A508CB8E839EA6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BD7FA92295F87AF33357E /* LocationService.swift */; };
 		6C46B182F66B98DB06748BC3 /* AwardsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1113F9E81F68A0F8D90231D0 /* AwardsTabView.swift */; };
+		86B6A4583325EE2CFF96FB6B /* ZDXCCDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615EE0ABFA5BD353A25523B /* ZDXCCDatabase.swift */; };
 		87A2EB21FDFE8C84E81873D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF955E8F64C0F41340A7F720 /* ContentView.swift */; };
 		9435BAEBFC5512AEE8962393 /* QSOStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */; };
 		A5109C412484CB9F129BAE06 /* LogTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD25ADBAA63E51C3820861C /* LogTabView.swift */; };
 		C7A807B382A0045FEC24A974 /* HAMAllInOneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6732BE20AF63EFCB6FE27280 /* HAMAllInOneApp.swift */; };
 		CF53B1EAA1861CA5CDAC2155 /* SatelliteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */; };
+		D7780159EE43E6C405476CBB /* SGP4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F919D1C91750B0BB247127 /* SGP4.swift */; };
+		DBAE72B7040BC9B6C1676410 /* APRSStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C180C895BCC6B21E76772B4D /* APRSStore.swift */; };
+		EFEF54CE1A9C89ED04783068 /* LoTWStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE812CE2C86669A46FB6F1C /* LoTWStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,15 +33,20 @@
 		1095E499D9940F6A91FFCCBB /* RepeatersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatersTabView.swift; sourceTree = "<group>"; };
 		1113F9E81F68A0F8D90231D0 /* AwardsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsTabView.swift; sourceTree = "<group>"; };
 		13F442F9ABA9A3C56B195AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1615EE0ABFA5BD353A25523B /* ZDXCCDatabase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZDXCCDatabase.swift; path = ZDXCCDatabase.swift; sourceTree = "<group>"; };
 		22A53BF777CFD3989108AAFD /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		4FD25ADBAA63E51C3820861C /* LogTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTabView.swift; sourceTree = "<group>"; };
+		55EAC2A41D796A691A11A194 /* DXClusterStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DXClusterStore.swift; sourceTree = "<group>"; };
+		59F919D1C91750B0BB247127 /* SGP4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SGP4.swift; sourceTree = "<group>"; };
 		6732BE20AF63EFCB6FE27280 /* HAMAllInOneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAMAllInOneApp.swift; sourceTree = "<group>"; };
 		67D30F3AFD82AD7E6F31D4ED /* HAMAllInOne.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HAMAllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E61D781AD506343B6402AB /* SatellitesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatellitesTabView.swift; sourceTree = "<group>"; };
 		9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteStore.swift; sourceTree = "<group>"; };
 		B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSOStore.swift; sourceTree = "<group>"; };
+		BCE812CE2C86669A46FB6F1C /* LoTWStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoTWStore.swift; sourceTree = "<group>"; };
 		BDE1C85F2E879F20D3A869D5 /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		C1335FFE71663435F82F8754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C180C895BCC6B21E76772B4D /* APRSStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APRSStore.swift; sourceTree = "<group>"; };
 		CF955E8F64C0F41340A7F720 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D1B2EA32E12DE62B273C600C /* CallsignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsignService.swift; sourceTree = "<group>"; };
 		E66BD7FA92295F87AF33357E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -124,6 +134,9 @@
 				B6C611D3782CD2CDC93C3C1B /* QSOStore.swift */,
 				02DEF29CE4520E4F92772C48 /* RepeaterStore.swift */,
 				9C178BA9B6D8BA3FC1FDE465 /* SatelliteStore.swift */,
+				55EAC2A41D796A691A11A194 /* DXClusterStore.swift */,
+				C180C895BCC6B21E76772B4D /* APRSStore.swift */,
+				BCE812CE2C86669A46FB6F1C /* LoTWStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,6 +153,8 @@
 		B061AFA36360A6BA330E4704 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				59F919D1C91750B0BB247127 /* SGP4.swift */,
+				1615EE0ABFA5BD353A25523B /* ZDXCCDatabase.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,8 +199,6 @@
 			dependencies = (
 			);
 			name = HAMAllInOne;
-			packageProductDependencies = (
-			);
 			productName = HAMAllInOne;
 			productReference = 67D30F3AFD82AD7E6F31D4ED /* HAMAllInOne.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +229,7 @@
 			mainGroup = AD4A8E36263BDE0E6A4371FA;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = CD6DF77D03D5D2106408F4B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -253,6 +267,11 @@
 				1859152FAEEED615FB7F8D0A /* RepeatersTabView.swift in Sources */,
 				CF53B1EAA1861CA5CDAC2155 /* SatelliteStore.swift in Sources */,
 				3F201C2DE5A95904FC99D234 /* SatellitesTabView.swift in Sources */,
+				D7780159EE43E6C405476CBB /* SGP4.swift in Sources */,
+				86B6A4583325EE2CFF96FB6B /* ZDXCCDatabase.swift in Sources */,
+				22F4A8D948E913371BD265C7 /* DXClusterStore.swift in Sources */,
+				DBAE72B7040BC9B6C1676410 /* APRSStore.swift in Sources */,
+				EFEF54CE1A9C89ED04783068 /* LoTWStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +313,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = TXHUY489RV;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -310,7 +329,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "HAM All-In-One needs your location for satellite pass predictions.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HAM All-In-One needs your location to show nearby repeaters and calculate distances.";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,7 +352,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.hamallinone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.HAMSignal;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -374,7 +393,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TXHUY489RV;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -396,7 +415,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "HAM All-In-One needs your location for satellite pass predictions.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HAM All-In-One needs your location to show nearby repeaters and calculate distances.";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.hamallinone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenthorn.HAMSignal;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

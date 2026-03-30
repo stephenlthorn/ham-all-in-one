@@ -20,10 +20,9 @@ actor CallsignService {
         }
 
         // FCC ULS API — public, no key required
-        // Endpoint: https://wireless2.fcc.gov/UlsApp/UlsSearch/searchBasic.jsp
-        // API: https://wireless2.fcc.gov/UlsApp/UlsSearch/searchBasicXML.jsp?faces-redirect=true
+        // Returns XML with callsign, name, class, address, coordinates, etc.
         let encodedCall = upper.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? upper
-        let urlStr = "https://wireless2.fcc.gov/UlsApp/UlsSearch/api/variables/uls_ham/getUlsData?callsign=\(encodedCall)&type=Callsign"
+        let urlStr = "https://wireless2.fcc.gov/UlsApp/UlsSearch/searchBasicXML.jsp?callsign=\(encodedCall)"
 
         guard let url = URL(string: urlStr) else {
             throw CallsignError.invalidCallsign
