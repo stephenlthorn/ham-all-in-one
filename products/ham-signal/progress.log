@@ -1,0 +1,43 @@
+2026-03-30 | ham-signal-sprint-1 | iteration 1/3
+===
+
+BUILD: ✅ SUCCESS
+- Debug sim: passed
+- Release archive: passed
+- IPA: /tmp/hamall-build/HAMAllInOne.ipa
+
+GIT: ✅
+- Commit: ba0d496 "feat(ham-signal): Sprint 1 — APRS, DX Cluster, LoTW tab integration"
+- Commit: 300c4db "fix(ham-signal): bump MARKETING_VERSION to 2.0.4"
+- Pushed to GitHub master
+
+TESTFLIGHT: ✅
+- Uploaded build 2.0.4 (4) to App ID 6760658659
+- Status: processing (skip_waiting_for_build_processing=true)
+
+WORK COMPLETED:
+- APRSTabView: APRS.fi station lookup, map + list split, nearby search
+- DXClusterTabView: DX Cluster telnet client, band filter, real-time spot list
+- LoTWTabView: LoTW CSV fetch, mode/band filter, confirmation stats
+- Wired all 3 stores via @EnvironmentObject in HAMAllInOneApp
+- Added 3 new tabs to ContentView (Log, Repeaters, Satellites, APRS, DX, Awards, LoTW, Profile = 8 tabs total)
+- project.yml bundle ID fixed: com.stephenthorn.HAMSignal (was com.stephenthorn.hamallinone)
+- MARKETING_VERSION bumped to 2.0.4 (App Store Connect 2.0.3 was closed for new submissions)
+- XcodeGen regenerated to pick up new Views/APRS, Views/DXCluster, Views/LoTW directories
+
+BACKLOG STATUS UPDATE:
+- A-004 (APRS store and integration): DONE
+- A-005 (DX Cluster store and integration): DONE
+- A-006 (LoTW integration): DONE
+
+WARNINGS (non-blocking):
+- Map/MapAnnotation deprecated in APRSTabView (iOS 17 deprecation, functional)
+- NSLock async warnings in DXClusterStore (Swift 6 compatibility, functional)
+- Pre-existing unused variable warnings in SGP4.swift, SatelliteStore.swift, etc.
+
+BLOCKERS: None
+
+NEXT ITERATION NOTES (Sprint 2):
+- Phase B items (iOS HIG audit, Awards polish, Repeater map polish, Accessibility)
+- Phase C items (App Store metadata, Privacy policy, TestFlight setup)
+- Consider migrating APRSTabView Map to iOS 17+ Annotation API

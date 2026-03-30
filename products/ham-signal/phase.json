@@ -1,14 +1,14 @@
 {
-  "status": "initialized",
+  "status": "active",
   "product": "ham-signal",
   "phase": "A",
   "phaseLabel": "Foundation & Feature Development",
   "phaseStartedAt": "2026-03-30",
-  "totalIterations": 0,
-  "lastIterationAt": null,
-  "lastQAStatus": "unknown",
-  "consecutiveCleanNights": 0,
-  "lastCommit": "a2c1ef3",
+  "totalIterations": 1,
+  "lastIterationAt": "2026-03-30",
+  "lastQAStatus": "passed",
+  "consecutiveCleanNights": 1,
+  "lastCommit": "300c4db",
   "sourceRepo": "https://github.com/stephenlthorn/ham-all-in-one",
   "bundleId": "com.stephenthorn.HAMSignal",
   "scheme": "HAMAllInOne",
@@ -18,7 +18,7 @@
       "label": "Foundation & Feature Development",
       "promotionThreshold": 1,
       "status": "active",
-      "itemsComplete": [],
+      "itemsComplete": ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-008"],
       "storeBlockersRemaining": null
     },
     "B": {
@@ -33,7 +33,7 @@
       "promotionThreshold": null,
       "status": "pending",
       "itemsComplete": [],
-      "storeBlockersRemaining": null
+      "storeBlockersRemaining": 3
     }
   },
   "nightlySchedule": [
@@ -41,5 +41,15 @@
     { "job": "ham-signal-sprint-2", "time": "10:30 PM ET", "iteration": 2 },
     { "job": "ham-signal-sprint-3", "time": "11:30 PM ET", "iteration": 3 }
   ],
-  "scheduleNote": "HAM Signal sprints run 9:30-11:30 PM ET, offset by 30min from ADHD Call Reminder pipeline to avoid resource contention."
+  "scheduleNote": "HAM Signal sprints run 9:30-11:30 PM ET, offset by 30min from ADHD Call Reminder pipeline to avoid resource contention.",
+  "iterations": {
+    "1": {
+      "completedAt": "2026-03-30",
+      "commit": "300c4db",
+      "items": ["A-004", "A-005", "A-006"],
+      "buildStatus": "success",
+      "testflightBuild": "2.0.4",
+      "notes": "APRS, DX Cluster, LoTW tabs wired. Bundle ID fix. Version bump for App Store Connect."
+    }
+  }
 }
