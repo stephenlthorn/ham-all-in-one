@@ -23,17 +23,35 @@ struct ContentView: View {
                 }
                 .tag(2)
 
+            APRSTabView()
+                .tabItem {
+                    Label("APRS", systemImage: "map")
+                }
+                .tag(3)
+
+            DXClusterTabView()
+                .tabItem {
+                    Label("DX", systemImage: "dot.radiowaves.left.and.right.slanted")
+                }
+                .tag(4)
+
             AwardsTabView()
                 .tabItem {
                     Label("Awards", systemImage: "trophy")
                 }
-                .tag(3)
+                .tag(5)
+
+            LoTWTabView()
+                .tabItem {
+                    Label("LoTW", systemImage: "checkmark.seal")
+                }
+                .tag(6)
 
             ProfileTabView()
                 .tabItem {
                     Label("Profile", systemImage: "person.circle")
                 }
-                .tag(4)
+                .tag(7)
         }
         .tint(.orange)
     }
@@ -45,4 +63,7 @@ struct ContentView: View {
         .environmentObject(QSOStore())
         .environmentObject(RepeaterStore())
         .environmentObject(SatelliteStore())
+        .environmentObject(APRSStore())
+        .environmentObject(DXClusterStore())
+        .environmentObject(LoTWStore())
 }
