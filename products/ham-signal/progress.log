@@ -41,3 +41,4 @@ NEXT ITERATION NOTES (Sprint 2):
 - Phase B items (iOS HIG audit, Awards polish, Repeater map polish, Accessibility)
 - Phase C items (App Store metadata, Privacy policy, TestFlight setup)
 - Consider migrating APRSTabView Map to iOS 17+ Annotation API
+[2026-03-30T18:35:21.042Z] START iteration=3 phase=C
