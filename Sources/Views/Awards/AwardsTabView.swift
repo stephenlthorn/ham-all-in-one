@@ -2,13 +2,16 @@ import SwiftUI
 
 struct AwardsTabView: View {
     @EnvironmentObject var qsoStore: QSOStore
+    @EnvironmentObject var lotwStore: LoTWStore
     @State private var selectedAward: AwardType = .dxcc
+    @State private var lotwCallsign: String = ""
 
     enum AwardType: String, CaseIterable {
         case dxcc  = "DXCC"
         case vucc  = "VUCC"
         case was   = "WAS"
         case county = "Counties"
+        case lotw  = "LoTW"
     }
 
     var body: some View {
@@ -27,6 +30,7 @@ struct AwardsTabView: View {
                 case .vucc:   vuccView
                 case .was:    wasView
                 case .county: countyView
+                case .lotw:   lotwView
                 }
             }
             .navigationTitle("Awards")
@@ -238,6 +242,133 @@ struct AwardsTabView: View {
         .listStyle(.insetGrouped)
     }
 
+    // MARK: - LoTW Confirmations
+
+    private var lotwView: some View {
+        List {
+            Section {
+                VStack(spacing: 8) {
+                    Image(systemName: "checkmark.seal.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.green)
+                    Text("LoTW Confirmations")
+                        .font(.headline)
+                    Text("\(lotwStore.qsos.count) confirmed QSOs")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+            }
+
+            Section {
+                HStack {
+                    TextField("Your Callsign", text: $lotwCallsign)
+                        .textInputAutocapitalization(.characters)
+                        .autocorrectionDisabled()
+                        .font(.body.monospaced())
+                        .textFieldStyle(.roundedBorder)
+
+                    Button {
+                        Task {
+                            await lotwStore.fetchConfirmations(callsign: lotwCallsign)
+                        }
+                    } label: {
+                        if lotwStore.isLoading {
+                            ProgressView()
+                        } else {
+                            Image(systemName: "arrow.down.circle")
+                        }
+                    }
+                    .disabled(lotwCallsign.trimmingCharacters(in: .whitespaces).isEmpty)
+                }
+            }
+
+            if let error = lotwStore.errorMessage {
+                Section {
+                    Text(error)
+                        .font(.caption)
+                        .foregroundColor(.red)
+                }
+            }
+
+            if !lotwStore.qsos.isEmpty {
+                Section("Confirmations by Band") {
+                    let bandCounts = Dictionary(grouping: lotwStore.qsos, by: { $0.band })
+                        .mapValues { $0.count }
+                        .sorted { $0.value > $1.value }
+                    ForEach(bandCounts.prefix(10), id: \.key) { band, count in
+                        HStack {
+                            Text(band)
+                                .font(.caption.monospaced().bold())
+                            Spacer()
+                            Text("\(count)")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+
+                Section("Confirmations by Mode") {
+                    let modeCounts = Dictionary(grouping: lotwStore.qsos, by: { $0.mode })
+                        .mapValues { $0.count }
+                        .sorted { $0.value > $1.value }
+                    ForEach(modeCounts.prefix(10), id: \.key) { mode, count in
+                        HStack {
+                            Text(mode)
+                                .font(.caption.monospaced().bold())
+                            Spacer()
+                            Text("\(count)")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+
+                Section("Recent Confirmations") {
+                    ForEach(lotwStore.qsos.prefix(20)) { qso in
+                        HStack {
+                            Text(qso.callsign)
+                                .font(.headline.monospaced())
+                                .foregroundColor(.green)
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                Text(qso.band)
+                                    .font(.caption.bold())
+                                Text(qso.mode)
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                }
+
+                Section {
+                    if let lastFetched = lotwStore.lastFetched {
+                        Text("Last fetched: \(lastFetched, style: .relative) ago")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            } else if !lotwStore.isLoading && lotwStore.errorMessage == nil {
+                Section {
+                    VStack(spacing: 8) {
+                        Image(systemName: "checkmark.seal")
+                            .font(.largeTitle)
+                            .foregroundColor(.secondary)
+                        Text("Enter your callsign to fetch LoTW confirmations")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+    }
+
     // MARK: - County Hunter
 
     private var countyView: some View {
@@ -414,4 +545,5 @@ enum USCallsignParser {
 #Preview {
     AwardsTabView()
         .environmentObject(QSOStore())
+        .environmentObject(LoTWStore())
 }

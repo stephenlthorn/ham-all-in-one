@@ -1,10 +1,10 @@
 {
   "status": "active",
   "product": "ham-signal",
-  "phase": "A",
-  "phaseLabel": "Foundation & Feature Development",
+  "phase": "C",
+  "phaseLabel": "App Store Readiness",
   "phaseStartedAt": "2026-03-30",
-  "totalIterations": 1,
+  "totalIterations": 2,
   "lastIterationAt": "2026-03-30",
   "lastQAStatus": "passed",
   "consecutiveCleanNights": 1,
@@ -17,31 +17,25 @@
     "A": {
       "label": "Foundation & Feature Development",
       "promotionThreshold": 1,
-      "status": "active",
+      "status": "complete",
       "itemsComplete": ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-008"],
       "storeBlockersRemaining": null
     },
     "B": {
       "label": "UI/UX Polish & Accessibility",
       "promotionThreshold": 1,
-      "status": "pending",
-      "itemsComplete": [],
+      "status": "complete",
+      "itemsComplete": ["B-001", "B-002", "B-003", "B-004"],
       "storeBlockersRemaining": null
     },
     "C": {
       "label": "App Store Readiness",
       "promotionThreshold": null,
-      "status": "pending",
+      "status": "active",
       "itemsComplete": [],
       "storeBlockersRemaining": 3
     }
   },
-  "nightlySchedule": [
-    { "job": "ham-signal-sprint-1", "time": "9:30 PM ET", "iteration": 1 },
-    { "job": "ham-signal-sprint-2", "time": "10:30 PM ET", "iteration": 2 },
-    { "job": "ham-signal-sprint-3", "time": "11:30 PM ET", "iteration": 3 }
-  ],
-  "scheduleNote": "HAM Signal sprints run 9:30-11:30 PM ET, offset by 30min from ADHD Call Reminder pipeline to avoid resource contention.",
   "iterations": {
     "1": {
       "completedAt": "2026-03-30",
@@ -51,5 +45,11 @@
       "testflightBuild": "2.0.4",
       "notes": "APRS, DX Cluster, LoTW tabs wired. Bundle ID fix. Version bump for App Store Connect."
     }
-  }
+  },
+  "nightlySchedule": [
+    { "job": "ham-signal-sprint-1", "time": "9:30 PM ET", "iteration": 1 },
+    { "job": "ham-signal-sprint-2", "time": "10:30 PM ET", "iteration": 2 },
+    { "job": "ham-signal-sprint-3", "time": "11:30 PM ET", "iteration": 3 }
+  ],
+  "scheduleNote": "HAM Signal sprints run 9:30-11:30 PM ET, offset by 30min from ADHD Call Reminder pipeline to avoid resource contention."
 }

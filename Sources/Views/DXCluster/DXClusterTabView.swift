@@ -117,8 +117,16 @@ struct DXSpotRow: View {
 
                 Spacer()
 
-                // Frequency
-                Text(String(format: "%.1f kHz", spot.frequency))
+                // Band + Frequency
+                Text(spot.band)
+                    .font(.caption.bold())
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+                    .background(Color.blue.opacity(0.1))
+                    .cornerRadius(4)
+
+                Text(String(format: "%.4f", spot.frequencyMHz))
+                    .font(.subheadline.monospaced())
                     .font(.subheadline.monospaced())
                     .foregroundColor(.primary)
             }

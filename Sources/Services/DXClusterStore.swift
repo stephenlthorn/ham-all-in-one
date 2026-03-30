@@ -19,6 +19,22 @@ final class DXClusterStore: ObservableObject {
 
         var frequencyMHz: Double { frequency / 1000.0 }
 
+        var band: String {
+            let mhz = frequencyMHz
+            let ranges: [String: ClosedRange<Double>] = [
+                "160m":  1.8...2.0,   "80m":   3.5...4.0,
+                "40m":   7.0...7.3,   "30m":  10.1...10.15,
+                "20m":  14.0...14.35, "17m":  18.068...18.168,
+                "15m":  21.0...21.45, "12m":  24.89...24.99,
+                "10m":  28.0...29.7,   "6m":   50.0...54.0,
+                "2m":  144.0...148.0,
+            ]
+            for (b, range) in ranges {
+                if range.contains(mhz) { return b }
+            }
+            return "???"
+        }
+
         static func == (lhs: DXSpot, rhs: DXSpot) -> Bool {
             lhs.callsign == rhs.callsign &&
             lhs.frequency == rhs.frequency &&

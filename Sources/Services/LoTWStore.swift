@@ -26,9 +26,9 @@ final class LoTWStore: ObservableObject {
     @Published private(set) var errorMessage: String?
     @Published private(set) var lastFetched: Date?
 
-    // ARRL LoTW public CSV export URL (no auth needed for public QSOs)
-    // This endpoint returns confirmed QSOs for a given callsign
-    private static let lotwURL = "https://loty.arrl.org/lotw-user-search?"
+    // ARRL LoTW CSV export — requires callsign login via query params
+    // Format: https://loty.arrl.org/lotw?qso_call=CALL&lots=(lo_tw)userlogin&lotp=PASSWORD&...
+    private static let lotwURL = "https://loty.arrl.org/lotw?"
 
     // ── Public API ─────────────────────────────────────────
 
@@ -64,25 +64,23 @@ final class LoTWStore: ObservableObject {
     // ── Network ─────────────────────────────────────────
 
     private func fetchLoTWData(callsign: String) async throws -> [LoTWQSO] {
-        // ARRL's LoTW has a public query endpoint
-        // Format: https://loty.arrl.org/lotw-user-search?qso_grid=ALL&mode=all&qso_start_date=2000-01-01&qso_call=something
-        let params = [
-            "qso_call": callsign,
-            "mode": "all",
-            "qso_start_date": "2000-01-01",
-            "qso_end_date": "2099-12-31",
-            "format": "csv"
-        ]
-
+        // ARRL LoTW export endpoint — uses ADIF-style response
+        // Public confirmed QSOs via: https://loty.arrl.org/lotw?qso_call=CALL&mode=all&qso_start_date=2000-01-01
         var components = URLComponents(string: Self.lotwURL)!
-        components.queryItems = params.map { URLQueryItem(name: $0.key, value: $0.value) }
+        components.queryItems = [
+            URLQueryItem(name: "qso_call", value: callsign),
+            URLQueryItem(name: "mode", value: "all"),
+            URLQueryItem(name: "qso_start_date", value: "2000-01-01"),
+            URLQueryItem(name: "qso_end_date", value: "2099-12-31"),
+            URLQueryItem(name: "format", value: "adif"),
+        ]
 
         guard let url = components.url else {
             throw LoTWError.invalidCallsign
         }
 
         var request = URLRequest(url: url)
-        request.setValue("HAMAllInOne/1.0 (ham app)", forHTTPHeaderField: "User-Agent")
+        request.setValue("HAMAllInOne/1.0", forHTTPHeaderField: "User-Agent")
         request.timeoutInterval = 30
 
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -95,49 +93,39 @@ final class LoTWStore: ObservableObject {
             throw LoTWError.serverError(httpResponse.statusCode)
         }
 
-        return try parseCSV(data: data, myCallsign: callsign)
+        return try parseADIF(data: data, myCallsign: callsign)
     }
 
-    // ── CSV Parsing ─────────────────────────────────────
+    // ── ADIF Parsing ────────────────────────────────────
 
-    private func parseCSV(data: Data, myCallsign: String) throws -> [LoTWQSO] {
+    /// Parse ADIF format response from ARRL LoTW.
+    /// ADIF fields look like: <CALL:6>W1AW <FREQ:5>14.074 <BAND:3>20m <MODE:4>FT8 ...
+    private func parseADIF(data: Data, myCallsign: String) throws -> [LoTWQSO] {
         guard let content = String(data: data, encoding: .utf8) ?? String(data: data, encoding: .ascii) else {
             throw LoTWError.parseError
         }
 
         var results: [LoTWQSO] = []
-        let lines = content.components(separatedBy: "\n").filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
+        let body = extractADIFBody(content)
 
-        // Skip header line
-        for line in lines.dropFirst() {
-            let fields = parseCSVLine(line)
-            guard fields.count >= 8 else { continue }
+        let records = body.components(separatedBy: "<EOR>").filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
 
-            // ADIF-style field mapping
-            let call = fieldValue(fields, "CALL")
-            guard !call.isEmpty else { continue }
+        for record in records {
+            let fields = parseADIFRecord(record)
+            guard let call = fields["CALL"], !call.isEmpty else { continue }
 
-            let qsoDateStr = fieldValue(fields, "QSO_DATE")
-            let qsoDate = parseADIFDate(qsoDateStr) ?? Date()
-            let lotwDateStr = fieldValue(fields, "LOTW_LOTWUSERLOGindate")
-            let lotwDate = parseADIFDate(lotwDateStr)
-
-            let mode = fieldValue(fields, "MODE")
-            let band = fieldValue(fields, "BAND")
-            let grid = fieldValue(fields, "GRIDSQUARE")
-            let state = fieldValue(fields, "STATE")
-            let country = fieldValue(fields, "COUNTRY")
-            let freq = fieldValue(fields, "FREQ")
+            let qsoDate = parseADIFDate(fields["QSO_DATE"] ?? "") ?? Date()
+            let lotwDate = parseADIFDate(fields["LOTW_LOTWUSERLOGindate"] ?? fields["LOTW_QSO_LOTWUSERLOGindate"] ?? "")
 
             let qso = LoTWQSO(
                 id: UUID(),
                 callsign: call,
-                gridsquare: grid.isEmpty ? nil : grid,
-                state: state.isEmpty ? nil : state,
-                country: country.isEmpty ? nil : country,
-                mode: mode.isEmpty ? "SSB" : mode,
-                band: band.isEmpty ? "?" : band,
-                frequency: freq.isEmpty ? nil : freq,
+                gridsquare: fields["GRIDSQUARE"],
+                state: fields["STATE"],
+                country: fields["COUNTRY"],
+                mode: fields["MODE"] ?? "SSB",
+                band: fields["BAND"] ?? "?",
+                frequency: fields["FREQ"],
                 qsoDate: qsoDate,
                 lotwUploadDate: lotwDate,
                 bearing: nil,
@@ -149,52 +137,55 @@ final class LoTWStore: ObservableObject {
         return results
     }
 
-    private func parseCSVLine(_ line: String) -> [String: String] {
-        var result: [String: String] = [:]
-        // Simple CSV parsing — handle quoted fields
-        var remaining = line
-        while !remaining.isEmpty {
-            // Find field name (before first comma, format: "FIELD:VALUE" or "FIELD":"VALUE")
-            guard let colonIdx = remaining.firstIndex(of: ":") else { break }
-            let fieldName = String(remaining[..<colonIdx]).uppercased()
-            remaining = String(remaining[remaining.index(after: colonIdx)...])
+    private func extractADIFBody(_ content: String) -> String {
+        // Skip header comments (lines starting with # or containing header markers)
+        var lines = content.components(separatedBy: .newlines)
+        if let headerEnd = lines.firstIndex(where: { $0.uppercased().contains("<EOH>") }) {
+            lines = Array(lines.dropFirst(headerEnd + 1))
+        }
+        return lines.joined(separator: "\n")
+    }
 
-            var value = ""
-            if remaining.first == "\"" {
-                // Quoted field
-                remaining.removeFirst()
-                if let endQuote = remaining.firstIndex(of: "\"") {
-                    value = String(remaining[..<endQuote])
-                    remaining = String(remaining[remaining.index(after: endQuote)...])
-                    if remaining.first == "," { remaining.removeFirst() }
-                }
+    /// Parse a single ADIF record into field name → value dictionary.
+    /// ADIF field format: <FIELD:LENGTH>VALUE or <FIELD:LENGTH:POS>VALUE
+    private func parseADIFRecord(_ record: String) -> [String: String] {
+        var result: [String: String] = [:]
+        var remaining = record.uppercased()
+
+        while let openBrkt = remaining.firstIndex(of: "<") {
+            let afterOpen = remaining[remaining.index(after: openBrkt)...]
+            guard let colon1 = afterOpen.firstIndex(of: ":") else { break }
+
+            let fieldName = String(afterOpen[..<colon1])
+            let afterColon1 = afterOpen[afterOpen.index(after: colon1)...]
+
+            guard let closeBrkt = afterColon1.firstIndex(of: ">") else { break }
+            let lenRaw = String(afterColon1[..<closeBrkt])
+
+            var fieldLength: Int?
+            let afterClose: Substring
+
+            if let colon2 = lenRaw.firstIndex(of: ":") {
+                fieldLength = Int(String(lenRaw[..<colon2]))
+                afterClose = afterColon1[afterColon1.index(after: closeBrkt)...]
             } else {
-                // Unquoted field
-                if let commaIdx = remaining.firstIndex(of: ",") {
-                    value = String(remaining[..<commaIdx])
-                    remaining = String(remaining[remaining.index(after: commaIdx)...])
-                } else {
-                    value = remaining
-                    remaining = ""
-                }
+                fieldLength = Int(lenRaw)
+                afterClose = afterColon1[afterColon1.index(after: closeBrkt)...]
             }
+
+            guard let len = fieldLength else { break }
+            let value = String(afterClose.prefix(len))
+            remaining = String(afterClose.dropFirst(len))
             result[fieldName] = value
         }
+
         return result
     }
 
-    private func fieldValue(_ fields: [String: String], _ key: String) -> String {
-        fields[key] ?? ""
-    }
-
     private func parseADIFDate(_ s: String) -> Date? {
-        // Format: YYYYMMDD or YYYYMMDD HHMMSS
         guard s.count >= 8 else { return nil }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
-        if s.count >= 15 {
-            formatter.dateFormat = "yyyyMMdd HHmmss"
-        }
         return formatter.date(from: String(s.prefix(8)))
     }
 }
