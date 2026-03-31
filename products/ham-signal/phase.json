@@ -5,10 +5,10 @@
   "phaseLabel": "App Store Readiness",
   "phaseStartedAt": "2026-03-30",
   "totalIterations": 2,
-  "lastIterationAt": "2026-03-30",
+  "lastIterationAt": "2026-03-31",
   "lastQAStatus": "passed",
-  "consecutiveCleanNights": 1,
-  "lastCommit": "300c4db",
+  "consecutiveCleanNights": 2,
+  "lastCommit": "639afd6",
   "sourceRepo": "https://github.com/stephenlthorn/ham-all-in-one",
   "bundleId": "com.stephenthorn.HAMSignal",
   "scheme": "HAMAllInOne",
@@ -44,6 +44,14 @@
       "buildStatus": "success",
       "testflightBuild": "2.0.4",
       "notes": "APRS, DX Cluster, LoTW tabs wired. Bundle ID fix. Version bump for App Store Connect."
+    },
+    "2": {
+      "completedAt": "2026-03-31",
+      "commit": "639afd6",
+      "items": [],
+      "buildStatus": "success",
+      "testflightBuild": "2.0.4",
+      "notes": "Phase C kickoff. Debug+Release build verified. TestFlight upload via fastlane beta. No code changes — Phase C blockers (App Store metadata, privacy policy URL, TestFlight setup) remain open."
     }
   },
   "nightlySchedule": [
